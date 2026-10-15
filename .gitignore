@@ -1,0 +1,8 @@
+bin/
+.idea/
+.DS_Store
+*.test
+*.out
+*.pdf
+*.xlsx
+statements/
