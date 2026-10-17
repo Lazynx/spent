@@ -10,6 +10,4 @@ var (
 	ErrInvalidCurrency  = errors.New("currency is empty or unsupported")
 	ErrEmptyDescription = errors.New("transaction description is empty")
 	ErrInvalidFormat    = errors.New("invalid statement format")
-
-	errNotImplemented = errors.New("not implemented")
 )

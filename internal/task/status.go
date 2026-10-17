@@ -1,5 +1,7 @@
 package task
 
+import "slices"
+
 type Status int
 
 const (
@@ -9,10 +11,20 @@ const (
 	Failed
 )
 
+var statusNames = [...]string{"pending", "processing", "completed", "failed"}
+
+var transitions = map[Status][]Status{
+	Pending:    {Processing},
+	Processing: {Completed, Failed},
+}
+
 func (s Status) String() string {
-	return ""
+	if s < 0 || int(s) >= len(statusNames) {
+		return "unknown"
+	}
+	return statusNames[s]
 }
 
 func (s Status) CanTransitionTo(next Status) bool {
-	return false
+	return slices.Contains(transitions[s], next)
 }

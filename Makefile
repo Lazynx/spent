@@ -4,7 +4,7 @@ build:
 	go build -o bin/spent ./cmd/spent
 
 run:
-	go run ./cmd/spent
+	go run ./cmd/spent --log-level=debug testdata/sample.csv
 
 fmt:
 	gofmt -w .
